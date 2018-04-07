@@ -26,7 +26,8 @@ def index():
         task = request.form['task']
         tasks.append(task)
 
+    tasks = Task.query.all()
     return render_template('todos.html',title="Get It Done!", tasks=tasks)
 
 if __name__ == 'main':
-app.run()
+    app.run()
